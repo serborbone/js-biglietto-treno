@@ -27,6 +27,12 @@ let scontoU18 = ((costoViaggio * 20) / 100).toFixed(2);
 let scontoOver65 = ((costoViaggio * 40) / 100).toFixed(2);
 
 
+/* VERIFICARE SE IL VALORE INSERITO NEL PROMPT 
+  NON E' UN NUMERO */
+  
+if (isNaN(etaUser) || isNaN(kmViaggio)) {
+  alert('Devi inserire un valore numerico!');
+} 
 
 // condizione IF
 
@@ -40,8 +46,9 @@ if (etaUser < 18) {
   document.getElementById("price-top").innerHTML = 'Complimenti, da Over 65 hai diritto ad uno sconto del 40% !';
   document.getElementById("price-bottom").innerHTML = 'Il prezzo del biglietto per il viaggio selezionato è: ' + '<span>' + scontoOver65 + '</span>' + ' &euro;';
 
-} else {
+} else if (etaUser) {
 
+  //se etaUser non ha un valore numerico non viene mostrato il prezzo non scontato
   document.getElementById("price-bottom").innerHTML = 'Il prezzo del biglietto per il viaggio selezionato è: ' + '<span>' + costoViaggio + '</span>' + ' &euro;';
 
 }
