@@ -19,12 +19,12 @@ let costoViaggio = kmViaggio * 0.21;
 
 //sconto del 20% per Under 18 con output max 2 num decimali
 
-let scontoU18 = ((costoViaggio * 20) / 100).toFixed(2);
+let scontoU18 = costoViaggio - ((costoViaggio * 20) / 100).toFixed(2);
 
 
 //sconto del 40% per Over 65 con output max 2 num decimali
 
-let scontoOver65 = ((costoViaggio * 40) / 100).toFixed(2);
+let scontoOver65 = costoViaggio - ((costoViaggio * 40) / 100).toFixed(2);
 
 
 /* VERIFICARE SE IL VALORE INSERITO NEL PROMPT 
